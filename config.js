@@ -8,9 +8,10 @@ window.CONFIG = {
     { name: '摘要', label: '摘要'},
     { name: '大綱', label: '大綱'},
     { name: '目標受眾', label: '目標受眾'},
+    { name: '先備知識', label: '先備知識'},
     { name: '詳細說明', label: '詳細說明'},
     { name: '關鍵字', label: '關鍵字'},
-    { name: '附件連結', label: '附件連結', isURL: true}
+    { name: '附件連結', label: '附件連結'}
   ],
   skipRows: 3
 }
