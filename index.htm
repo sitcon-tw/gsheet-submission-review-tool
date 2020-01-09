@@ -23,7 +23,11 @@
 
       <data-view v-if="db.length > 0" v-for="data in db" :data="data" :fields="fields"></data-view>
       <div v-if="state === 'LOADING'">Loading...</div>
-      <div v-if="state === 'NOFILE'">Please drag HTML file into this window.</div>
+      <div v-if="state === 'NOFILE'">
+        Please drag HTML file into this window or click the button below to upload.
+        <br>
+        <input type="file" @change="onUploadByButton">
+      </div>
       <div v-if="state === 'ERROR'">Loading failed, please drag HTML file manually.</div>
       <div v-if="state === 'DONE' && db.length == 0">NO DATA</div>
     </div>

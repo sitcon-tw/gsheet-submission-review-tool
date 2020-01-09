@@ -98,6 +98,11 @@ function runApp()
       db: function () {
         this.state = 'DONE'
       }
+    },
+    methods: {  
+      onUploadByButton(e) {
+        loadFile(e.target.files[0])
+      }
     }
   });
 }
@@ -110,7 +115,12 @@ load('template.html')
 runApp();
 
 document.addEventListener('drop', e => { e.stopPropagation(); e.preventDefault();
-  var file = e.dataTransfer.files[0];
+  loadFile(e.dataTransfer.files[0]);
+}, false);
+
+
+
+function loadFile(file){
   var reader = new FileReader();
   reader.addEventListener('loadend', e => {
     if(reader.readyState === FileReader.DONE) {
@@ -120,7 +130,7 @@ document.addEventListener('drop', e => { e.stopPropagation(); e.preventDefault()
     }
   });
   reader.readAsText(file, 'UTF-8')
-}, false);
+}
 
 document.addEventListener('dragover', e => {
   e.stopPropagation();
