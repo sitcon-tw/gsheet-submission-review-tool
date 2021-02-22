@@ -11,6 +11,7 @@ window.CONFIG = {
     { name: '先備知識', label: '先備知識'},
     { name: '詳細說明', label: '詳細說明'},
     { name: '關鍵字', label: '關鍵字'},
+    { name: '相關主題',label: '相關主題 '},
     { name: '附件連結', label: '附件連結'}
   ],
   skipRows: 3
